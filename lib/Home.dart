@@ -11,6 +11,13 @@ class _HomeState extends State<Home> {
 
   int _indice = 0;
 
+  List<Widget> _telas = [
+    Text("Home"),
+    Text("Em alta"),
+    Text("Inscrições"),
+    Text("Biblioteca"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +35,7 @@ class _HomeState extends State<Home> {
           IconButton(onPressed: (){}, icon: Icon(Icons.account_circle)),
         ],
       ),
-      body: Container(),
+      body: _telas[_indice],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _indice,
