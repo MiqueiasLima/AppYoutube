@@ -8,6 +8,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int _indice = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,11 +30,37 @@ class _HomeState extends State<Home> {
       ),
       body: Container(),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _indice,
+
+        onTap: (index){
+          this.setState(() {
+            _indice = index;
+          });
+        },
+        fixedColor: Colors.red,
         items: [
-          BottomNavigationBarItem(icon:Icon(Icons.home),
-          label: 'teste'),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: 'teste'),
-          BottomNavigationBarItem(icon: Icon(Icons.http),label: 'teste'),
+          BottomNavigationBarItem(
+              icon:Icon(Icons.home),
+              label: 'Home',
+             // backgroundColor: Colors.orange
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.whatshot),
+              label: 'Em alta',
+              //backgroundColor: Colors.blue
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.subscriptions),
+              label: 'Inscrições',
+             // backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.folder),
+              label: 'Biblioteca',
+              //backgroundColor: Colors.amber
+          ),
+
         ],
       ),
     );
