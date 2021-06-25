@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:youtube/telas/Biblioteca.dart';
+import 'package:youtube/telas/EmAlta.dart';
+import 'package:youtube/telas/Inicio.dart';
+import 'package:youtube/telas/Inscricao.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,10 +16,10 @@ class _HomeState extends State<Home> {
   int _indice = 0;
 
   List<Widget> _telas = [
-    Text("Home"),
-    Text("Em alta"),
-    Text("Inscrições"),
-    Text("Biblioteca"),
+    Inicio(),
+    Inscricao(),
+    EmAlta(),
+    Biblioteca(),
   ];
 
   @override
