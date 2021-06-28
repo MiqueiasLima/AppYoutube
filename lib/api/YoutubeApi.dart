@@ -25,8 +25,10 @@ class YoutubeApi {
 
     if (response.statusCode == 200) {
 
+
       Map<String,dynamic> dadosJson = json.decode(response.body);
-      print(dadosJson['pageInfo']['totalResults'].toString());
+      //print(dadosJson);
+      print(dadosJson['items'][0]['snippet']['title']);
 
       //print(response.body);
     } else {
