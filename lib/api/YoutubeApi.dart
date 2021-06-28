@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:youtube/models/Video.dart';
+
 const String YOUTUBE_API_KEY = 'AIzaSyD2miN_slHo8gD4gcvMNRTvX_uNf0wUK74';
 const String ID_CANAL = 'UCv-Nx8pSfG_LxbViMz14RWQ';
 const String URL_BASE = 'https://www.googleapis.com/';
@@ -27,8 +29,25 @@ class YoutubeApi {
 
 
       Map<String,dynamic> dadosJson = json.decode(response.body);
+      print(dadosJson['items']);
+
+      List<Video> videos = dadosJson['items'].map<Video>(
+          (map){
+            return Video.fromJason(map);
+          }
+      ).toList();
+
+      for(var video in videos){
+        print(video.id);
+      }
+
+      /*
+      for(var items in dadosJson['items']){
+        print(items.toString());
+      }
+      */
       //print(dadosJson);
-      print(dadosJson['items'][0]['snippet']['title']);
+      //print(dadosJson['items'][0]['snippet']['title']);
 
       //print(response.body);
     } else {
