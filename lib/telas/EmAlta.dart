@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EmAlta extends StatefulWidget {
-  const EmAlta({Key? key}) : super(key: key);
+  const EmAlta({Key key}) : super(key: key);
 
   @override
   _EmAltaState createState() => _EmAltaState();
@@ -12,7 +12,7 @@ class _EmAltaState extends State<EmAlta> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("Biblioteca",style: TextStyle(
+        child: Text("Em alta",style: TextStyle(
             fontSize: 25
         ),),
       ),
